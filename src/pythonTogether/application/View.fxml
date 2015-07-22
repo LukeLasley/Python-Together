@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1000.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pythonTogether.application.UserViewController">
+   <children>
+      <MenuBar fx:id="menu" layoutY="2.0" prefHeight="25.0" prefWidth="1000.0">
+        <menus>
+          <Menu fx:id="fileMenu" mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openFile" text="Open File" />
+                  <MenuItem mnemonicParsing="false" onAction="#createFile" text="New File" />
+                  <MenuItem mnemonicParsing="false" onAction="#save" text="Save Current" />
+               </items></Menu>
+            <Menu mnemonicParsing="false" text="Run">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#runFileFromControl" text="Run Current" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Connections">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#connect" text="Connect" />
+                  <MenuItem mnemonicParsing="false" onAction="#disconnect" text="Disconnect" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <TabPane fx:id="Files" layoutY="27.0" prefHeight="531.0" prefWidth="811.0" tabClosingPolicy="ALL_TABS" />
+      <TextArea fx:id="TextArea" editable="false" layoutY="555.0" prefHeight="165.0" prefWidth="724.0" />
+      <TableView fx:id="ConnectedUsers" layoutX="811.0" layoutY="80.0" prefHeight="478.0" prefWidth="190.0">
+        <columns>
+          <TableColumn fx:id="Names" prefWidth="102.0" text="Name" />
+          <TableColumn fx:id="IPs" prefWidth="85.0" text="IP" />
+        </columns>
+      </TableView>
+      <Label fx:id="InfoLabel" layoutX="811.0" layoutY="37.0" text="Label" />
+      <Label layoutX="811.0" layoutY="54.0" prefHeight="26.0" prefWidth="190.0" text="Connected Users:" />
+      <TextArea fx:id="Messages" editable="false" layoutX="724.0" layoutY="557.0" prefHeight="137.0" prefWidth="277.0" />
+      <Button fx:id="sendMessage" layoutX="935.0" layoutY="694.0" mnemonicParsing="false" onAction="#sendMessage" prefHeight="26.0" prefWidth="65.0" text="Send" />
+      <TextField fx:id="toSend" layoutX="724.0" layoutY="694.0" prefHeight="25.0" prefWidth="211.0" />
+   </children>
+</AnchorPane>
